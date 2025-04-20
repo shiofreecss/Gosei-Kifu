@@ -1,0 +1,32 @@
+# 棋譜（Japanese Kifu Format）
+# 黒：Takemiya Masaki
+# 白：Cho Chikun
+# 日付: 1986-02-27
+# 棋戦: 第11期名人戦挑戦手合七番勝負第1局
+# 結果: 黒の中押し勝ち
+
+1. 黒: Q16
+2. 白: D4
+3. 黒: Q4
+4. 白: D16
+5. 黒: R6
+6. 白: R14
+7. 黒: O17
+8. 白: L16
+9. 黒: K4
+10. 白: F3
+11. 黒: H3
+12. 白: H4
+13. 黒: G5
+14. 白: E5
+15. 黒: C3
+16. 白: C5
+17. 黒: D3
+
+# SGF equivalent sample for reference:
+# (;GM[1]FF[4]CA[UTF-8]AP[CGoban:3]ST[2]
+# RU[Japanese]SZ[19]KM[5.5]
+# PW[Cho Chikun]PB[Takemiya Masaki]DT[1986-02-27]
+# EV[第11期名人戦挑戦手合七番勝負第1局]RE[B+R]
+# ;B[pd];W[dp];B[pp];W[dd];B[qj];W[qf];B[nc];W[md];B[jp];W[fq];B[hq];W[hp];B[go];W[eo];B[cq];W[co];B[dq]
+# ) 

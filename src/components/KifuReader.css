@@ -1,0 +1,357 @@
+.kifu-reader {
+  font-family: inherit;
+}
+
+.error {
+  color: #e74c3c;
+  padding: 12px 15px;
+  background-color: #fdedeb;
+  border-radius: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.kifu-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.board-container {
+  width: 60%;
+  min-width: 480px;
+  background-color: rgba(249, 249, 249, 0.5);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.controls-container {
+  width: 35%;
+  min-width: 330px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.game-info {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.game-info-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.game-info-player {
+  flex: 1;
+}
+
+.game-info-player-name {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.game-info-player-captures {
+  font-size: 16px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.game-info-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #333;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-info-detail {
+  background-color: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.game-info-comment {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f5f9ff;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #e0e8f5;
+}
+
+.navigation-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.move-slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.move-button {
+  padding: 12px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.autoplay-button {
+  padding: 12px 16px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.autoplay-button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.move-range {
+  width: 100%;
+  height: 12px;
+  appearance: none;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.move-range-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  gap: 25px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .kifu-content {
+    gap: 15px;
+  }
+
+  .board-container {
+    width: 55%;
+    min-width: 400px;
+    padding: 20px;
+  }
+
+  .controls-container {
+    width: 40%;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kifu-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .board-container {
+    width: 100%;
+    min-width: 0;
+    order: 1;
+  }
+
+  .controls-container {
+    width: 100%;
+    min-width: 0;
+    order: 2;
+  }
+
+  .game-info {
+    padding: 15px;
+  }
+
+  .navigation-container {
+    padding: 15px;
+  }
+
+  .move-slider {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .move-button, .autoplay-button {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-container {
+    padding: 15px;
+  }
+
+  .game-info {
+    padding: 12px;
+  }
+
+  .game-info-player-name {
+    font-size: 16px;
+  }
+
+  .game-info-player-captures {
+    font-size: 14px;
+  }
+
+  .game-info-details {
+    font-size: 14px;
+  }
+
+  .navigation-container {
+    padding: 12px;
+  }
+
+  .move-button, .autoplay-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .move-range-info {
+    font-size: 14px;
+    gap: 15px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  .board-container {
+    padding: 10px;
+  }
+
+  .game-info, .navigation-container {
+    padding: 10px;
+  }
+
+  .game-info-header {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .game-info-player {
+    width: 100%;
+  }
+
+  .game-info-player-name {
+    font-size: 14px;
+  }
+
+  .game-info-player-captures {
+    font-size: 12px;
+  }
+
+  .game-info-details {
+    font-size: 12px;
+  }
+
+  .game-info-detail {
+    padding: 6px 8px;
+  }
+
+  .move-slider {
+    gap: 5px;
+  }
+
+  .move-button, .autoplay-button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .move-range-info {
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+
+.kifu-reader-mobile .board-container {
+  margin-bottom: 10px;
+}
+
+.kifu-reader-mobile .game-info-header {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kifu-reader-mobile .game-info-player {
+  width: 100%;
+}
+
+.kifu-reader-mobile .move-slider {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Simplify controls on mobile for better usability */
+.kifu-reader-mobile .move-range-info {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.kifu-reader-mobile .autoplay-button {
+  flex: 1;
+  min-width: 80px;
+}
+
+/* Hide optional elements on very small screens */
+@media (max-width: 360px) {
+  .kifu-reader-mobile .game-info-detail:nth-child(2) {
+    display: none;
+  }
+  
+  .kifu-reader-mobile .game-info-comment {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+} 

@@ -1,0 +1,158 @@
+.game-library {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.game-library-header {
+  margin: 0 0 20px 0;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+.game-library-container {
+  display: flex;
+  height: calc(100% - 60px);
+}
+
+/* Left sidebar styles */
+.game-library-sidebar {
+  width: 280px;
+  border-right: 1px solid #eaeaea;
+  padding-right: 20px;
+  overflow: auto;
+  height: 100%;
+}
+
+/* Right panel styles */
+.game-library-content {
+  flex: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Game list styles */
+.game-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.game-item {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 1px solid #e0e0e0;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .game-library-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .game-library-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .game-library-content {
+    padding-left: 0;
+    height: auto;
+  }
+
+  .game-list {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .game-library {
+    padding: 15px;
+  }
+
+  .game-library-sidebar {
+    max-height: 250px;
+  }
+
+  .game-list {
+    grid-template-columns: 1fr;
+  }
+
+  .game-item {
+    padding: 12px;
+  }
+
+  /* Adjust category buttons for mobile */
+  .category-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .category-buttons button {
+    width: 100%;
+  }
+
+  /* Adjust tournament list for mobile */
+  .tournament-list {
+    font-size: 14px;
+  }
+
+  /* Adjust search bar for mobile */
+  .search-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-library {
+    padding: 10px;
+  }
+
+  .game-library-sidebar {
+    max-height: 200px;
+  }
+
+  .game-item {
+    padding: 10px;
+  }
+
+  .game-item h3 {
+    font-size: 14px;
+  }
+
+  .game-item .player-info {
+    font-size: 12px;
+  }
+
+  /* Make pagination more compact on mobile */
+  .pagination {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .pagination button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+} 
