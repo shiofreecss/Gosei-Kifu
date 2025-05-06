@@ -39,6 +39,25 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
   const [gamesPerPage, setGamesPerPage] = useState(20);
   const [cachedGamesByTournament, setCachedGamesByTournament] = useState<Record<string, GameInfo[]>>({});
   
+  // Add this effect to handle mobile screen size for games per page
+  useEffect(() => {
+    const handleResize = () => {
+      // If window width is less than 768px (mobile), set games per page to 5
+      if (window.innerWidth <= 768) {
+        setGamesPerPage(5);
+      }
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   // Load all tournaments on component mount
   useEffect(() => {
     const loadAllTournaments = async () => {
@@ -283,15 +302,6 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
         <button
           onClick={goToPreviousPage}
           disabled={currentPage === 1}
-          style={{
-            padding: '5px 10px',
-            backgroundColor: currentPage === 1 ? '#f0f0f0' : '#4CAF50',
-            color: currentPage === 1 ? '#999' : 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: currentPage === 1 ? 'default' : 'pointer',
-            fontSize: '14px'
-          }}
         >
           &laquo; Prev
         </button>
@@ -303,15 +313,6 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
         <button
           onClick={goToNextPage}
           disabled={currentPage === totalPages}
-          style={{
-            padding: '5px 10px',
-            backgroundColor: currentPage === totalPages ? '#f0f0f0' : '#4CAF50',
-            color: currentPage === totalPages ? '#999' : 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: currentPage === totalPages ? 'default' : 'pointer',
-            fontSize: '14px'
-          }}
         >
           Next &raquo;
         </button>
@@ -322,7 +323,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
           alignItems: 'center',
           gap: '5px'
         }}>
-          <span style={{ fontSize: '14px' }}>Games per page:</span>
+          <span className="games-per-page-text" style={{ fontSize: '14px' }}>Games per page:</span>
           <select
             value={gamesPerPage}
             onChange={(e) => {
@@ -336,6 +337,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
               fontSize: '14px'
             }}
           >
+            <option value={5}>5</option>
             <option value={10}>10</option>
             <option value={20}>20</option>
             <option value={50}>50</option>
@@ -490,15 +492,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
             }}>
               <button
                 onClick={() => setSelectedCategory('all')}
-                style={{
-                  padding: '8px 12px',
-                  backgroundColor: selectedCategory === 'all' ? '#4CAF50' : '#f0f0f0',
-                  color: selectedCategory === 'all' ? 'white' : '#333',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  fontSize: '14px'
-                }}
+                className={selectedCategory === 'all' ? 'selected' : ''}
               >
                 All Tournaments
               </button>
@@ -506,15 +500,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ onSelectGame }) => {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  style={{
-                    padding: '8px 12px',
-                    backgroundColor: selectedCategory === category.id ? '#4CAF50' : '#f0f0f0',
-                    color: selectedCategory === category.id ? 'white' : '#333',
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    fontSize: '14px'
-                  }}
+                  className={selectedCategory === category.id ? 'selected' : ''}
                 >
                   {category.name}
                 </button>

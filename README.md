@@ -2,6 +2,12 @@
 
 GoSei | AI-Kifu is an open-source web application dedicated to the Go community for reading, visualizing, and analyzing Go game records (kifu) in both SGF (Smart Game Format) and traditional Japanese kifu format.
 
+## Latest Updates (v1.0.1)
+
+- Improved mobile experience with 5 games per page on smaller screens
+- Updated UI with consistent dark grey button styling
+- See [VERSION.md](VERSION.md) for complete version history
+
 ## Live Demo
 
 Check out the live deployment of GoSei | AI-Kifu at [https://kifu.gosei.xyz/](https://kifu.gosei.xyz/)
@@ -22,6 +28,8 @@ The project is powered by the [Beaver Foundation](https://beaver.foundation), su
 - 📚 Extensive game library with over 66,000 professional games
 - 🔍 Advanced search and filtering options
 - 📱 Responsive design for desktop and mobile
+  - Optimized UI for small screens with appropriate game results pagination
+  - Mobile-friendly navigation and hidden UI elements to save space
 - ⚡ Optimized performance with caching and React memoization
 
 ## Screenshots
